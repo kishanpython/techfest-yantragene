@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block head %}
+{% load static %} 
+ <style type="text/css">
+          
+          #notes{
+              border:1px solid yellow;
+              border-left:6px solid yellow;
+          }	
+        .panel-height {
+             height:100%; / change according to your requirement/
+             
+          }
+          .underline_text {
+              text-align: center;
+              font-size:5.7vw;
+              color:aquamarine;
+              font-family: cursive;
+          }
+          p{
+            font-family: serif;
+            text-align: center;
+          }
+          .container-border{
+             border: 1px solid #CA6F1E;
+            border-radius: 15px;  
+          }
+
+ </style>
+
+ <script type="text/javascript" src=" {% static 'js/notify.js' %}"></script>
+
+{% endblock %}
+
+{% block body %}
+     <h1 class="underline_text">NOTIFICATIONS</h1><br><br>
+     <div class="container-fluid">
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-info">
+         <div class="panel-body panel-height" style="background-color:white;">
+          <ul class="head list-unstyled" style="font-size: 22px;">
+
+                     <li><p class="container-border">FGIET will provide accommodation to the students for free.</p>
+                    <li><p class="container-border">Lunch and dinner will be provided by the college at Rs. 40 per diet.</p></li>
+                    <li><p class="container-border">winners and runners-up of each events will receive a cash prize.</p></li>
+          </ul>
+         </div>
+      </div>       
+     </div>
+  </div>
+</div>  
+{% endblock %}
+
+

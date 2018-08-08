@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+
+
+
+<style type="text/css">
+	#title_bar{
+		margin-top:4%;
+		
+		font-family:;
+		font-size:10vw;
+		color:#AF601A;
+	} 
+	#marq{
+		font-family: cursive;
+		color:white;
+
+	}
+	#image{
+		margin-top:5%;
+	}
+	
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+ <div class="container">
+ 	<center><img id="image" src="{% static 'images/logo1.png' %}"/></center>
+	<center><h1 id="title_bar">YAΠTΓAGΣΠΣ</h1></center>
+	<marquee behavior="alternate" scrollamount="16"><h1 id="marq">GENE THAT ENCODE TECHNOLOGY</h1></marquee>
+
+	</div>
+ 
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

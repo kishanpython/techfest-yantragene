@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block head %}
+{% load static %}
+
+		<script type="text/javascript" src="{% static 'js/reg.js' %}"></script>
+		<style type="text/css">
+			label{
+				color:white;
+			}
+			h1{
+				font-size: 4vw;
+				font-family: cursive;
+				color:aquamarine;
+			}
+		</style>
+		
+{% endblock %}
+
+{% block body %}
+   <center><h1>LOGIN</h1></center>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4  col-sm-10 col-sm-offset-1">
+			<form  method="post">
+				<center style="color:red"><p>{{ msg }}</p></center>
+				{% csrf_token %}
+				<label>Username:</label>
+				<input type="text" name="username"  required='required' placeholder="Enter username" class="form-control" autocomplete="off" autofocus="autofocus"><br>
+				<label>Password:</label>
+				<input type="password" name="password" required="required" placeholder="Password" class="form-control"><br><br>
+
+				<center>
+					<input type="submit" class="btn btn-default btn-success" name="Login">
+                    <input type="reset" class="btn btn-default btn-info" name="Reset"> 
+				</center><br><br>
+
+              <center><a href="{% url 'account:register' %}"><h3 style="color:white;font-family: cursive;">Click here to register ➤</h3></a></center>
+
+
+			</form>
+		</div>
+</div>
+
+{% endblock %}

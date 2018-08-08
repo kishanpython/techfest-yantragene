@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block head %}
+{% load static %}
+
+
+<style type="text/css">
+    .dept_box{
+      height:450px;
+    }
+    h1{
+        font-size: 6vw;
+    }
+</style>
+
+<script type="text/javascript" src="{% static 'js/events.js' %}"></script>
+
+{% endblock %}
+{% block body %}
+
+  <div class="container">
+    <center><h3 style="color:red;">{{ msg }}</h3><center>
+    <h1 style="color:aquamarine;text-align: center;font-family: cursive;">EVENTS</h1><br>
+    <div class="row">      
+        {% if outer_event %}
+            {% for d,elist in outer_event.items %}
+
+               <div class="col-md-6 col-lg-3 col-sm-10">
+                <div class="thumbnail dept_box">
+
+                    <img src="{{ d.bimage.url }}" alt="{{ d.branch }}" style="width:100%;height:250px;">
+                    <div class="caption">
+                        <center><h3>{{ d.branch }}</h3></center>
+                    </div>
+                    <ul class="list-unstyled">
+                    {% for e in elist %}
+                        <center><li><p><a href="{% url 'events:details' id=e.id %}">{{e.event}}</a></p></li></center>
+                    {% endfor %} 
+                    </ul>               
+                </div>
+            </div>
+          {% endfor %}
+        {% else %}
+            <h1>No Proper Data</h1>
+        {% endif %} 
+{% endblock %}
+</div>
+</div>
